@@ -3,7 +3,22 @@
   <head>
     <title>Smiley Face</title>
   </head>
-  <body onload="alert('Here have a Smiley Face');document.getElementById('Smiley').click();">
-    <a id="Smiley" href="Smiley.png" download></a>
+  <body style="margin:0px;overflow:hidden;">
+    
+    <a id="Smiley" href="Smiley.png" width="0" height="0" download></a>
+    <canvas id="canvas" style="position:absolute;top:0px;left:0px;"></canvas>
+    
+    <script>
+    document.body.onload=function(){
+      
+      document.getElementById('Smiley').click();
+      
+      var canvas = document.getElementById('canvas');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      var ctx = canvas.getContext('2d');
+      
+    }
+    </script>
   </body>
 </html>
